@@ -1,0 +1,60 @@
+---
+import Footer from "../components/Footer.astro";
+import MobileNav from "../components/MobileNav.astro";
+import Nav from "../components/Nav.astro";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Fariz Grillz" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <!-- assets start -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/css/bootstrap5.css" />
+    <link rel="stylesheet" href="/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="/css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="/css/tostar.min.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/custom.css" />
+    <!-- assets end -->
+  </head>
+  <body>
+    <Nav />
+    <MobileNav title="Fariz Grillz" />
+    <slot />
+    <div id="dynamic_modal_view"></div>
+    <Footer title="Fariz Grillz" />
+    <script data-astro-rerun src="/js/jquery.min.js"></script>
+    <script data-astro-rerun src="/js/bootstrap5.js"></script>
+    <script data-astro-rerun src="/js/owl.carousel.min.js"></script>
+    <script data-astro-rerun src="/js/tostar.min.js"></script>
+    <script data-astro-rerun src="/js/main.js"></script>
+
+    <!--  -->
+    <script></script>
+    <script data-astro-rerun src="/js/custom.js"></script>
+  </body>
+
+  <style is:global>
+    .slider-best-sellers .owl-stage {
+      padding-left: 0 !important;
+    }
+  </style>
+</html>

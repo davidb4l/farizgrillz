@@ -1,0 +1,23 @@
+---
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+---
+
+<div class="container-fluid msg-container fixed-bottom px-0 d-none" id="msgCon">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="alert alert-custom-msg alert-dismissible fade show mb-0 mt-4">
+        “Welcome to {title}! We've added new exciting dishes to our menu. Check
+        them out now!”
+        <button
+          type="button"
+          class="btn-close"
+          id="closeMsg"
+          onclick="addToStorage()"
+          aria-label="Close"></button>
+      </div>
+    </div>
+  </div>
+</div>
